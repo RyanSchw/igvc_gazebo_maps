@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find igvc_gazebo)"/>
+    <arg name="world_name" default="$(find igvc_gazebo)/urdf/worlds/qualification.world"/>
+    <arg name="waypoint_folder_path" default="$(find igvc_gazebo)/config"/>
+    <arg name="waypoint_file_name" default="waypoints_qual_0.csv"/>
+    <arg name="cmd_timeout" default="0.5"/>
+    <!-- accelerate lidar with GPU -->
+    <arg name="gpu" default="false"/>
+
+    <!-- Vehicle pose -->
+    <arg name="x" default="-30"/>
+    <arg name="y" default="27"/>
+    <arg name="z" default="0.1525"/>
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0"/>
+
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- Create the world. -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_name)"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <include file="$(find igvc_description)/launch/spawn_igvc_robot.launch">
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="roll" value="$(arg roll)"/>
+        <arg name="pitch" value="$(arg pitch)"/>
+        <arg name="yaw" value="$(arg yaw)"/>
+
+        <!-- accelerate lidar with GPU -->
+        <arg name="gpu" value="$(arg gpu)"/>
+    </include>
+</launch>

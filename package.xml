@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>igvc_gazebo</name>
+  <version>0.0.0</version>
+  <description>
+    igvc_control contains the files realting to the control of the robot in simulation
+  </description>
+
+  <maintainer email="purdue@purdue.edu">Senior Design Spring 2020</maintainer>
+
+  <license>MIT</license>
+
+  <author email="purdue@purdue.edu">Senior Design Spring 2020</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/urdf/models"/>
+    <gazebo_ros gazebo_media_path="${prefix}/urdf/models"/>
+  </export>
+</package>
