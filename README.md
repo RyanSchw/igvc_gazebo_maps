@@ -1,6 +1,20 @@
 # IGVC Gazebo Maps
 2020 Senior Design - IGVC Maps
 
+## Usage
+Example command:
+```
+roslaunch igvc_gazebo qualification.launch
+```
+
+### Command-line configurable items
+Both Gazebo and rviz GUIs can be turned on/off using `gazebo_gui` and `rviz_gui`. *Both currently default to true.* Even if you turn `gazebo_gui` off, Gazebo itself will still run. Currently, rviz defaults to a file in the path `igvc_description/rviz/<launch file name>`.
+
+Example command:
+```
+roslaunch igvc_gazebo qualification.launch gazebo_gui:=false
+```
+
 ## How to install
 
 * Remove your `igvc_gazebo` directory (move it to another directory if you have changes you don't want to lose)

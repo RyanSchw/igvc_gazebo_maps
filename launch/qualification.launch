@@ -4,6 +4,8 @@
     <arg name="track" default="0"/>
     <arg name="cmd_timeout" default="0.5"/>
     <arg name="gpu" default="false"/>
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="rviz_gui" default="true"/>
 
     <!-- Vehicle pose -->
     <arg name="x" value="-30"/>
@@ -38,5 +40,9 @@
         <arg name="yaw" value="$(arg yaw)"/>
         <arg name="gpu" value="$(arg gpu)"/>
         <arg name="cmd_timeout" value="$(arg cmd_timeout)"/>
+        <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
     </include>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find igvc_description)/rviz/qualification.rviz" 
+          if="$(arg rviz_gui)"/>
 </launch>
