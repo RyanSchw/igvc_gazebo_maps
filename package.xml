@@ -13,9 +13,12 @@
   <author email="purdue@purdue.edu">Senior Design Spring 2020</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <exec_depend>gazebo_ros</exec_depend>
+
+  <depend>gazebo_ros</depend>
+
   <exec_depend>hector_gazebo_plugins</exec_depend>
   <exec_depend>hector_gazebo_worlds</exec_depend>
+  <exec_depend>gazebo</exec_depend>
 
   <export>
     <gazebo_ros gazebo_model_path="${prefix}/urdf/models"/>
