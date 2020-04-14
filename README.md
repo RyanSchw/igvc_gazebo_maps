@@ -1,6 +1,17 @@
 # IGVC Gazebo Maps
 2020 Senior Design - IGVC Maps
 
+### Recommended folder structure with AWS (see `aws_support` branch)
+```
+Base Folder
+└── Robot Application Code
+└── Simulation Application Code
+    └── src/
+        └── URDF Description folder?
+            └── urdf/
+        └── This repository
+```
+
 ## Usage
 Example command:
 ```
